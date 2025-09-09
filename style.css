@@ -1,12 +1,12 @@
 #box{
     width: 500px;
-    height: 1000px;
+    flex: 1;
     background-color: #b6C454;
     position: relative;
     left: 300px;
     top: 150px;
     border: solid 3px#91972A;
-     border-radius: 15px;
+    border-radius: 15px;
 }
 
 .opt1{
