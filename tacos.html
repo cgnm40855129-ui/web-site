@@ -3,12 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>tacos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="box">
-        <h2>hello</h2>
+    <div id="nav">
+        <img src="" alt="">
+        <ul></ul>
+        <ul></ul>
     </div>
+    <div id="box">
+        <div class="opt2" id="asada">Asada</div>
+        <div class="opt2" id="pastor">Pastor</div>
+        <div class="opt2" id="pollo">Pollo</div>
+        <div class="opt2" id="barbacoa">Barbacoa</div>
+        <div class="opt2" id="lengua">Lengua</div>
+        <div class="opt2" id="carnitas">Carnitas</div>
+        <div class="opt2" id="tripa">Tripa</div>
+        <div class="opt2" id="cabeza">Cabeza</div>
+        <div class="opt2" id="chorizo">Chorizo</div>
+        <div class="opt2" id="campechano">Campechano</div>
+    </div>
+
+    <footer>&copy;Tacos Mi Tierra</footer>
+    <script>
+    const btn = document.getElementsByClassName("opt2");
+    for(let i = 0; i < btn.length; i++){
+        if(btn[i].id === "asada"){
+            const asada = document.getElementById("asada");
+            asada.addEventListener('click', function() {
+                 indow.location.href = "tacos.html";
+                });
+        } else if(btn[i].id === "tortas"){
+            const twortas = document.getElementById("tortas");
+            tortas.addEventListener('click', function() {
+                 window.location.href = "./tortas.html";
+                });
+        } else if(btn[i].id === "quesadillas"){
+           const quesadillas = document.getElementById("quesadillas");
+            quesadillas.addEventListener('click', function() {
+                 window.location.href = "quesadillas.html";
+                });
+        } else if(btn[i].id === "burritos"){
+            const burritos = document.getElementById("burritos");
+            burritos.addEventListener('click', function() {
+                 window.location.href = "burritos.html";
+                });
+        } else if(btn[i].id === "platillos"){
+            const platillos = document.getElementById("platillos");
+            platillos.addEventListener('click', function() {
+                 window.location.href = "platillos.html";
+                });
+        }
+    }
+</script>
 </body>
 </html>
