@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>platillos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,40 +13,70 @@
         <ul></ul>
     </div>
     <div id="box">
-        <div class="opt1" id="tacos">Tacos</div>
-        <div class="opt1" id="tortas">Tortas</div>
-        <div class="opt1" id="quesadillas">Quesadillas</div>
-        <div class="opt1" id="burritos">Burritos</div>
-        <div class="opt1" id="platillos">Platillos</div>
+        <div class="opt2" id="asada">Asada</div>
+        <div class="opt2" id="pastor">Pastor</div>
+        <div class="opt2" id="pollo">Pollo</div>
+        <div class="opt2" id="barbacoa">Barbacoa</div>
+        <div class="opt2" id="lengua">Lengua</div>
+        <div class="opt2" id="carnitas">Carnitas</div>
+        <div class="opt2" id="tripa">Tripa</div>
+        <div class="opt2" id="cabeza">Cabeza</div>
+        <div class="opt2" id="chorizo">Chorizo</div>
+        <div class="opt2" id="campechano">Campechano</div>
     </div>
 
     <footer>&copy;Tacos Mi Tierra</footer>
     <script>
-    const btn = document.getElementsByClassName("opt1");
+    const btn = document.getElementsByClassName("opt2");
     for(let i = 0; i < btn.length; i++){
-        if(btn[i].id === "tacos"){
-            const tacos = document.getElementById("tacos");
-            tacos.addEventListener('click', function() {
-                 window.location.href = "tacos.html";
+        if(btn[i].id === "asada"){
+            const asada = document.getElementById("asada");
+         asada.addEventListener('click', function() {
+                 
                 });
-        } else if(btn[i].id === "tortas"){
-            const tortas = document.getElementById("tortas");
-            tortas.addEventListener('click', function() {
-                 window.location.href = "./tortas.html";
+        } else if(btn[i].id === "pastor"){
+            const pastor = document.getElementById("pastor");
+            pastor.addEventListener('click', function() {
+                 
                 });
-        } else if(btn[i].id === "quesadillas"){
-           const quesadillas = document.getElementById("quesadillas");
-            quesadillas.addEventListener('click', function() {
-                 window.location.href = "quesadillas.html";
+        } else if(btn[i].id === "pollo"){
+           const pollo = document.getElementById("pollo");
+            pollo.addEventListener('click', function() {
+               
                 });
-        } else if(btn[i].id === "burritos"){
-            const burritos = document.getElementById("burritos");
-            burritos.addEventListener('click', function() {
-                 window.location.href = "burritos.html";
+        } else if(btn[i].id === "barbacoa"){
+            const barbacoa = document.getElementById("barbacoa");
+            barbacoa.addEventListener('click', function() {
+                 
                 });
-        } else if(btn[i].id === "platillos"){
-            const platillos = document.getElementById("platillos");
-            platillos.addEventListener('click', function() {
+        } else if(btn[i].id === "lengua"){
+            const lengua = document.getElementById("lengua");
+            lengua.addEventListener('click', function() {
+                 window.location.href = "platillos.html";
+                });
+        } else if(btn[i].id === "carnitas"){
+            const carnitas = document.getElementById("carnitas");
+            carnitas.addEventListener('click', function() {
+                 window.location.href = "platillos.html";
+                });
+        } else if(btn[i].id === "tripa"){
+            const tripa = document.getElementById("tripa");
+            tripa.addEventListener('click', function() {
+                 window.location.href = "platillos.html";
+                });
+        }  else if(btn[i].id === "cabeza"){
+            const cabeza = document.getElementById("cabeza");
+            cabeza.addEventListener('click', function() {
+                 window.location.href = "platillos.html";
+                });
+        }  else if(btn[i].id === "chorizo"){
+            const chorizo = document.getElementById("chorizo");
+            chorizo.addEventListener('click', function() {
+                 window.location.href = "platillos.html";
+                });
+        } else if(btn[i].id === "campechano"){
+            const campechano = document.getElementById("campechano");
+            campechano.addEventListener('click', function() {
                  window.location.href = "platillos.html";
                 });
         }
