@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div>
+    <h3>Orden:</h3>
+    <h3 id="ordenContador"></h3>
+    <button id="resetOrder" style="margin: 10px 0;">Reset Order</button>
+    </div>
     <div id="nav">
         <img src="" alt="">
         <ul></ul>
         <ul></ul>
     </div>
     <div id="box">
+    <button id="resetOrder" style="margin: 10px 0;">Reset Order</button>
         <div class="opt2" id="asada">Asada</div>
         <div class="opt2" id="pastor">Pastor</div>
         <div class="opt2" id="pollo">Pollo</div>
@@ -27,6 +33,11 @@
 
     <footer>&copy;Tacos Mi Tierra</footer>
     <script>
+    // Add event listener to reset button to clear the order and reload the page
+    document.getElementById('resetOrder').addEventListener('click', function() {
+        localStorage.removeItem('order');
+        location.reload();
+    });
     const btn = document.getElementsByClassName("opt2");
     for(let i = 0; i < btn.length; i++){
         if(btn[i].id === "asada"){
@@ -52,33 +63,32 @@
         } else if(btn[i].id === "lengua"){
             const lengua = document.getElementById("lengua");
             lengua.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
                 });
         } else if(btn[i].id === "carnitas"){
             const carnitas = document.getElementById("carnitas");
             carnitas.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
+
+            });
         } else if(btn[i].id === "tripa"){
             const tripa = document.getElementById("tripa");
             tripa.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
+
+            });
         }  else if(btn[i].id === "cabeza"){
             const cabeza = document.getElementById("cabeza");
             cabeza.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
+
+            });
         }  else if(btn[i].id === "chorizo"){
             const chorizo = document.getElementById("chorizo");
             chorizo.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
+
+            });
         } else if(btn[i].id === "campechano"){
             const campechano = document.getElementById("campechano");
             campechano.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
+
+            });
         }
     }
 </script>

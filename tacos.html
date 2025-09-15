@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div>
+    <h3>Orden:</h3>
+    <h3 id="ordenContador"></h3>
+    <button id="resetOrder" style="margin: 10px 0;">Reset Order</button>
+    </div>
     <div id="nav">
         <img src="" alt="">
         <ul></ul>
         <ul></ul>
     </div>
     <div id="box">
-        <div class="opt2" id="asada"> <botton>+</botton> Asada <botton>-</botton></div>
+        <div class="opt2" id="asada">  Asada </div>
         <div class="opt2" id="pastor">Pastor</div>
         <div class="opt2" id="pollo">Pollo</div>
         <div class="opt2" id="barbacoa">Barbacoa</div>
@@ -27,59 +32,28 @@
 
     <footer>&copy;Tacos Mi Tierra</footer>
     <script>
+    // Load order from localStorage or start with an empty array
+    let order = JSON.parse(localStorage.getItem('order')) || [];
+
+    // Function to add an item to the order and save it
+    function addToOrder(item) {
+        order.push(item);
+        localStorage.setItem('order', JSON.stringify(order));
+    }
+
+    // Add event listeners to each taco option
     const btn = document.getElementsByClassName("opt2");
     for(let i = 0; i < btn.length; i++){
-        if(btn[i].id === "asada"){
-            const asada = document.getElementById("asada");
-         asada.addEventListener('click', function() {
-                 
-                });
-        } else if(btn[i].id === "pastor"){
-            const pastor = document.getElementById("pastor");
-            pastor.addEventListener('click', function() {
-                 
-                });
-        } else if(btn[i].id === "pollo"){
-           const pollo = document.getElementById("pollo");
-            pollo.addEventListener('click', function() {
-               
-                });
-        } else if(btn[i].id === "barbacoa"){
-            const barbacoa = document.getElementById("barbacoa");
-            barbacoa.addEventListener('click', function() {
-                 
-                });
-        } else if(btn[i].id === "lengua"){
-            const lengua = document.getElementById("lengua");
-            lengua.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
-        } else if(btn[i].id === "carnitas"){
-            const carnitas = document.getElementById("carnitas");
-            carnitas.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
-        } else if(btn[i].id === "tripa"){
-            const tripa = document.getElementById("tripa");
-            tripa.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
-        }  else if(btn[i].id === "cabeza"){
-            const cabeza = document.getElementById("cabeza");
-            cabeza.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
-        }  else if(btn[i].id === "chorizo"){
-            const chorizo = document.getElementById("chorizo");
-            chorizo.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
-        } else if(btn[i].id === "campechano"){
-            const campechano = document.getElementById("campechano");
-            campechano.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
-        }
+        btn[i].addEventListener('click', function() {
+            // Add the selected taco to the order
+            addToOrder(btn[i].innerText);
+            // Redirect to platillos.html for certain tacos, or stay for others
+            if([
+                "lengua", "carnitas", "tripa", "cabeza", "chorizo", "campechano"
+            ].includes(btn[i].id)) {
+
+            }
+        });
     }
 </script>
 </body>

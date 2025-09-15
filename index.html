@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div>
+    <h3>Orden:</h3>
+    <h3 id="ordenContador"></h3>
+    <button id="resetOrder" style="margin: 10px 0;">Reset Order</button>
+    </div>
     <div id="nav">
         <img src="" alt="">
         <ul></ul>
@@ -22,35 +27,44 @@
 
     <footer>&copy;Tacos Mi Tierra</footer>
     <script>
-    const btn = document.getElementsByClassName("opt1");
-    for(let i = 0; i < btn.length; i++){
-        if(btn[i].id === "tacos"){
-            const tacos = document.getElementById("tacos");
-            tacos.addEventListener('click', function() {
-                 window.location.href = "tacos.html";
-                });
-        } else if(btn[i].id === "tortas"){
-            const tortas = document.getElementById("tortas");
-            tortas.addEventListener('click', function() {
-                 window.location.href = "./tortas.html";
-                });
-        } else if(btn[i].id === "quesadillas"){
-           const quesadillas = document.getElementById("quesadillas");
-            quesadillas.addEventListener('click', function() {
-                 window.location.href = "quesadillas.html";
-                });
-        } else if(btn[i].id === "burritos"){
-            const burritos = document.getElementById("burritos");
-            burritos.addEventListener('click', function() {
-                 window.location.href = "burritos.html";
-                });
-        } else if(btn[i].id === "platillos"){
-            const platillos = document.getElementById("platillos");
-            platillos.addEventListener('click', function() {
-                 window.location.href = "platillos.html";
-                });
+        // Add event listener to reset button to clear the order and reload the page
+        document.getElementById('resetOrder').addEventListener('click', function() {
+            localStorage.removeItem('order');
+            location.reload();
+        });
+        // Load order from localStorage or start with an empty array
+        let order = JSON.parse(localStorage.getItem('order')) || [];
+
+        // Function to add an item to the order and save it
+        function addToOrder(item) {
+            order.push(item);
+            localStorage.setItem('order', JSON.stringify(order));
         }
-    }
+
+        // Display the current order in the ordenContador element
+        const orderCount = document.getElementById("ordenContador");
+        orderCount.innerText = order.join(", ");
+
+        // Add event listeners to each menu option
+        const btn = document.getElementsByClassName("opt1");
+        for(let i = 0; i < btn.length; i++){
+            btn[i].addEventListener('click', function() {
+                // Add the selected item to the order
+                addToOrder(btn[i].innerText);
+                // Redirect to the corresponding page
+                if(btn[i].id === "tacos"){
+                    window.location.href = "tacos.html";
+                } else if(btn[i].id === "tortas"){
+                    window.location.href = "tortas.html";
+                } else if(btn[i].id === "quesadillas"){
+                    window.location.href = "quesadillas.html";
+                } else if(btn[i].id === "burritos"){
+                    window.location.href = "burritos.html";
+                } else if(btn[i].id === "platillos"){
+                    window.location.href = "platillos.html";
+                }
+            });
+        }
 </script>
 </body>
 </html>
